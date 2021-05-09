@@ -1,26 +1,26 @@
 {
+  "private": true,
   "name": "ssb",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --port 3003",
-    "build": "tsc && vite build",
-    "serve": "vite preview"
+    "dev": "next dev -p 3003",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "@progfay/scrapbox-parser": "^7.0.2",
+    "@progfay/scrapbox-parser": "^7.1.0",
+    "next": "^10.2.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "@vitejs/plugin-react-refresh": "^1.3.1",
     "autoprefixer": "^10.2.5",
-    "postcss": "^8.2.13",
+    "postcss": "^8.2.14",
     "prettier": "^2.2.1",
     "tailwindcss": "^2.1.2",
-    "typescript": "^4.1.2",
-    "vite": "^2.2.3"
+    "typescript": "^4.1.2"
   },
   "prettier": {
     "semi": false,
