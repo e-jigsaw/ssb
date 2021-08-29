@@ -7,7 +7,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@octokit/rest": "^18.9.1",
     "@progfay/scrapbox-parser": "^7.1.0",
+    "filenamify": "^5.0.1",
     "next": "^11.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
