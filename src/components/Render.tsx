@@ -1,7 +1,10 @@
 import { Block, Node, parse } from '@progfay/scrapbox-parser'
 import videoParser from 'js-video-url-parser'
 import Head from 'next/head'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
+import Link from 'next/link'
+// @ts-ignore
+import filenamify from 'filenamify/browser'
 
 const escapeAngle = (str: string) =>
   str.replace(/</g, '&lt;').replace(/(.)>/g, (_, p1) => `${p1}&gt;`)
@@ -11,12 +14,20 @@ const nodeRender = (node: Node) => {
     case 'plain':
       return escapeAngle(node.text)
     case 'hashTag': {
-      return <span>#{escapeAngle(node.href)}</span>
+      return (
+        <Link href={`/pages/${filenamify(node.href)}`}>
+          <span>#{escapeAngle(node.href)}</span>
+        </Link>
+      )
     }
     case 'link': {
       switch (node.pathType) {
         case 'relative': {
-          return escapeAngle(node.href)
+          return (
+            <Link href={`/pages/${filenamify(node.href)}`}>
+              {escapeAngle(node.href)}
+            </Link>
+          )
         }
         case 'root':
           return (
