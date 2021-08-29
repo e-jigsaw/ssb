@@ -4,6 +4,7 @@ import { useText } from 'hooks/useText'
 // @ts-ignore
 import filenamify from 'filenamify/browser'
 import { Octokit } from '@octokit/rest'
+import { Sidebar } from 'components/Sidebar'
 
 function App() {
   const [src, onChange] = useText()
@@ -39,7 +40,7 @@ function App() {
       base_tree: parent.data.tree.sha,
       tree: [
         {
-          path: filenamify(title),
+          path: `data/${filenamify(title)}`,
           mode: '100644',
           type: 'blob',
           sha: blob.data.sha,
@@ -69,17 +70,22 @@ function App() {
   }, [])
   return (
     <div>
-      <button onClick={onClick} className="border">
-        save
-      </button>
-      <span>{status}</span>
       <div className="flex h-screen">
-        <textarea
-          value={src}
-          onChange={onChange}
-          className="border border-gray-300 w-1/2 h-full"
-        ></textarea>
-        <div className="w-1/2">{JSON.stringify(parsed)}</div>
+        <div className="w-1/6">
+          <Sidebar></Sidebar>
+        </div>
+        <div className="w-3/6 h-full">
+          <button onClick={onClick} className="border">
+            save
+          </button>
+          <span>{status}</span>
+          <textarea
+            value={src}
+            onChange={onChange}
+            className="border border-gray-300 w-full h-full"
+          ></textarea>
+        </div>
+        <div className="w-2/6">{JSON.stringify(parsed)}</div>
       </div>
     </div>
   )
