@@ -1,14 +1,9 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { parse } from '@progfay/scrapbox-parser'
+import { useText } from 'hooks/useText'
 
 function App() {
-  const [src, setSrc] = useState('')
-  const onChange = useCallback(
-    (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-      setSrc(event.target.value)
-    },
-    []
-  )
+  const [src, onChange] = useText()
   const parsed = useMemo(() => parse(src), [src])
   return (
     <div className="flex h-screen">

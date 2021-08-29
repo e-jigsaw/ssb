@@ -10,7 +10,7 @@ export const useText = (
   initial: string = ''
 ): [
   string,
-  (event: ChangeEvent<HTMLInputElement>) => void,
+  (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
   Dispatch<SetStateAction<string>>
 ] => {
   const [text, setText] = useState(initial)
