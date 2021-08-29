@@ -33,7 +33,7 @@ function Token() {
         </button>
       </div>
       <div className="p-4">
-        <h1>repo</h1>
+        <h1>repos</h1>
         <input
           type="text"
           className="border text-xl"

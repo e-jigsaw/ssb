@@ -77,12 +77,11 @@ function Page() {
   useEffect(() => {
     setToken(window.localStorage.getItem('token'))
     setOwner(window.localStorage.getItem('owner'))
-    setRepo(window.localStorage.getItem('repo'))
   }, [])
   const { data } = useBlob(
     typeof router.query.path === 'string'
-      ? ['pages', router.query.path]
-      : ['pages', undefined],
+      ? ['pages', router.query.repo as string, router.query.path]
+      : ['pages', undefined, undefined],
     {
       onError: () => {
         setSrc(`${router.query.path as string}\n\n`)
@@ -91,9 +90,14 @@ function Page() {
   )
   useEffect(() => {
     if (data) {
-      setSrc(atob(data.data.content))
+      setSrc(decodeURIComponent(escape(atob(data.data.content))))
     }
   }, [data])
+  useEffect(() => {
+    if (router.query.repo) {
+      setRepo(router.query.repo as string)
+    }
+  }, [router.query])
   return (
     <div>
       <div className="flex h-screen">
