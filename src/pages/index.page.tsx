@@ -1,6 +1,5 @@
 import { useCallback, useMemo, useState } from 'react'
 import { parse } from '@progfay/scrapbox-parser'
-import 'tailwindcss/tailwind.css'
 
 function App() {
   const [src, setSrc] = useState('')
