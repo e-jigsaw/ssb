@@ -109,7 +109,7 @@ const blockRender = (block: Block) => {
     case 'line': {
       return (
         <div
-          style={{ paddingBottom: `${block.indent}rem`, marginBottom: '.5rem' }}
+          style={{ paddingLeft: `${block.indent}rem`, marginBottom: '.5rem' }}
         >
           {block.nodes.length > 0 ? block.nodes.map(nodeRender) : <br />}
         </div>
