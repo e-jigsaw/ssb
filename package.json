@@ -7,12 +7,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "@octokit/rest": "^18.9.1",
+    "@octokit/rest": "^18.10.0",
     "@progfay/scrapbox-parser": "^7.1.0",
     "date-fns": "^2.23.0",
     "filenamify": "^5.0.1",
     "js-video-url-parser": "^0.4.3",
-    "next": "^11.1.0",
+    "next": "^11.1.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "swr": "^1.0.0"
@@ -20,10 +20,10 @@
   "devDependencies": {
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
-    "autoprefixer": "^10.3.3",
+    "autoprefixer": "^10.3.4",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
-    "tailwindcss": "^2.2.8",
+    "tailwindcss": "^2.2.9",
     "typescript": "^4.4.2"
   },
   "prettier": {
