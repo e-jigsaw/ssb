@@ -5,11 +5,13 @@ import { useMemo } from 'react'
 import Link from 'next/link'
 // @ts-ignore
 import filenamify from 'filenamify/browser'
+import { useRouter } from 'next/router'
 
 const escapeAngle = (str: string) =>
   str.replace(/</g, '&lt;').replace(/(.)>/g, (_, p1) => `${p1}&gt;`)
 
 const nodeRender = (node: Node) => {
+  const router = useRouter()
   switch (node.type) {
     case 'plain':
       return escapeAngle(node.text)
@@ -24,8 +26,8 @@ const nodeRender = (node: Node) => {
       switch (node.pathType) {
         case 'relative': {
           return (
-            <Link href={`/pages/${filenamify(node.href)}`}>
-              {escapeAngle(node.href)}
+            <Link href={`/pages/${router.query.repo}/${filenamify(node.href)}`}>
+              <a className="text-blue-500">{escapeAngle(node.href)}</a>
             </Link>
           )
         }
