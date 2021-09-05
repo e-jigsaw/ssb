@@ -15,7 +15,7 @@ export const Sidebar = () => {
   const { data } = useBlob(['pages', router.query.repo as string, 'sidebar'])
   const parsed = useMemo(() => {
     if (data) {
-      return atob(data.data.content)
+      return decodeURIComponent(escape(atob(data.data.content)))
     }
     return ''
   }, [data])
