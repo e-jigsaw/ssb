@@ -2,13 +2,12 @@
   "private": true,
   "name": "ssb",
   "scripts": {
-    "dev": "concurrently \"next dev --turbo\" \"tailwindcss --input src/app/input.css --output src/app/output.css --watch\"",
-    "build": "tailwindcss src/app/input.css --output src/app/output.css && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
     "@progfay/scrapbox-parser": "^8.1.0",
-    "concurrently": "^7.5.0",
     "date-fns": "^2.29.3",
     "js-video-url-parser": "^0.5.1",
     "next": "^13.0.1",
