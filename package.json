@@ -4,9 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "postinstall": "patch-package",
-    "pages": "node node_modules/@cloudflare/next-on-pages/bin/index.js --experimental-minify"
+    "start": "next start"
   },
   "dependencies": {
     "@progfay/scrapbox-parser": "^8.1.0",
@@ -18,12 +16,10 @@
     "swr": "^1.3.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^0.1.0",
     "@types/node": "18.11.9",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.13",
-    "patch-package": "^6.5.0",
     "postcss": "^8.4.18",
     "tailwindcss": "^3.2.1",
     "typescript": "^4.8.4"
