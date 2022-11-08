@@ -1,9 +1,9 @@
-import Link from "next/link";
+import { SignIn } from "./SignIn";
 
 export default function Page() {
   return (
     <div>
-      <Link href="/signin">Sign in</Link>
+      <SignIn></SignIn>
     </div>
   );
 }
